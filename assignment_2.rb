@@ -19,9 +19,7 @@ emp.manage
 
 
 
-print "\n"
-print "="*100
-print "\n"
+puts "="*100
 
 class GF  
  def initialize  
@@ -74,6 +72,82 @@ end
   
 puts Lab.new("Labrador", "Benzy").to_s # .to_s is called implicitly with any puts or print or p method call  
 
+puts "="*100
+#Implicit Inheritance
+
+class Parent
+	def Animal()
+		puts " Parent Animal()"
+	end	
+end
+
+class Child < Parent
+end
+
+varp = Parent.new
+varc = Child.new
+
+varp.Animal()
+varc.Animal()
+
+puts "="*100
+#Override Explicitly
+
+class Parent
+	ss = "kk"
+	def initialize()
+		@data = {'name' => 'Amit'}
+	end
+	def Animal()
+		puts " Parent Animal()"
+	end	
+end
+
+class Child < Parent
+	def initialize()
+		super()
+		@data['city'] = 'ggn'
+	end
+    
+    '''def get_data()
+    	puts @data
+    end
+    '''
+	def Animal()
+		puts " Child Animal()"
+	end	
+end
+
+varp = Parent.new
+varc = Child.new
+
+varp.Animal()
+varc.Animal()
+varc.ss
+puts "="*100
+puObject.@data
+#Altering Before or After
+class Parent
+	def Animal()
+		puts " Parent Animal()"
+	end	
+end
+
+class Child < Parent
+	def Animal()
+		puts " Child  before Parent Animal() called"
+		super()
+		puts " Child  before Parent Animal() called"
+	end	
+end
+
+varp = Parent.new
+varc = Child.new
+
+varp.Animal()
+varc.Animal()
+
+puts "="*100
 
 #Implementing Composition
 
